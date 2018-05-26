@@ -24,6 +24,8 @@ create table libros(
 SELECT * FROM libros INNER JOIN autores ON libros.clv_autor = autores.clave  AND autores.nombre = 'samanta'
 /*3.2 Cuantos libros ha editado una casa editora*/
 SELECT * FROM libros INNER JOIN editoras ON libros.clv_editora = editoras.clave WHERE editoras.nombre ='Ed_Sociales'
+/*3.3 Cantidad de autores por libro*/
+SELECT count(autores.clave) from autores inner join libros on autores.clave = libros.clv_autor where libros.nombre = 'Sociales 2do'
 /*3.4 Con cuales autores ha trabajado una casa editora*/
 SELECT autores.nombre FROM autores INNER JOIN editoras ON autores.clv_editora = editoras.clave WHERE editoras.nombre = 'Ed_Sociales'
 /*3.4 Con cuales autores no ha trabajado una casa editora*/
